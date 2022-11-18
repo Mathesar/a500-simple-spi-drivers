@@ -1,6 +1,6 @@
 # Amiga spi-lib
 
-Original text by Niklas Ekstrom, modifications and additonal text by Dennis van Weeren
+Original text by Niklas Ekstrom, modifications and additonal text by Dennis van Weeren. 
 The functionality of the simple SPI controller is exposed through the spi-lib source code library.
 Just include the three files in the project you are building.
 
