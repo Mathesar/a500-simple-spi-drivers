@@ -23,14 +23,15 @@ The driver is currently very simple and does not support SCSI inquiry commands (
 The way to deal with this is to prep the SD-card under Winuae and use a manual mount script. As the driver is based upon Niklas's driver you can refer to the tutorials written for the sdbox. Like for example ([here](https://www.kernelcrash.com/blog/cheap-hard-drive-for-the-amiga-500-with-sdbox/2020/09/26/)). Just replace any reference to the driver with "sspisd.device". I actually use a boot floppy to mount the SD-card and handover control to the Workbench: partition on the SD-card. This process only takes a couple of seconds and after that the SD-card behaves like any other harddisk.
 
 # network driver
-The network driver uses channel 2 of the simple SPI controller to communicate with an ENC28J60 10Mbit ethernet controller chip. These chips are available as a cheap module and are thus easily hooked up to the simple SPI controller. The nework device driver is SANA-II compatible and can thus be used with any of the Amiga TCP/IP stacks.
-I use the FREE AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.net/package/comm/net/AmiTCP-bin-30b2). AmiTCP is not easy to setup but luckily Patrik Axelsson and David Eriksson made this excellent [installation guide](http://megaburken.net/~patrik/AmiTCP_Install/). Just make sure you replace any references to the SANA-II network device (they use "cnet.device") to "sspinet.device". Installing AmiTCP is probably best done under WinAUE like I did.
+The network driver uses channel 2 of the simple SPI controller to communicate with an ENC28J60 10Mbit ethernet controller chip. These chips are available as cheap modules from the usual sources and are  easily hooked up to the simple SPI controller using some dupont jump wires. Only 6 pins are used, VCC, GND, SCK, SO, SI and CS. The other pins on the module (WOL, RESET, CLKOUT and INT) are not used. The nework device driver is SANA-II compatible and can be used with any of the Amiga TCP/IP stacks.
+I use the old but free AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.net/package/comm/net/AmiTCP-bin-30b2). AmiTCP is not easy to setup but luckily Patrik Axelsson and David Eriksson made this excellent [installation guide](http://megaburken.net/~patrik/AmiTCP_Install/). Just make sure you replace any references to the SANA-II network device (they use "cnet.device") to "sspinet.device". Installing AmiTCP is probably best done under WinAUE like I did.
 
 # performance SD-card 
 (All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
 Booting into Classic-WB takes about 32 seconds
-Loading up Hippo-Player takes about 14 seconds
-Sysinfo reports a disk transfer speed of about 43 kbytes/sec
+Loading up HippoPlayer takes about 14 seconds
+Sysinfo reports a disk transfer speed of about 42 kbytes/sec
+Note that in general usage the relatively low performance of the simple SPI controller is not really noticed. Usually the CPU is the bottleneck. It is only when loading large chunks of data (like loading a large mod file in HippoPlayer) that you notice the speed difference.
 
 # performance network driver
 (All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
