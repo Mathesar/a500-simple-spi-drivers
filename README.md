@@ -1,17 +1,17 @@
 # a500-simple-spi-drivers
 SD-card and Ethernet drivers for the Amiga 500 Simple SPI controller. 
-The code is based upon previous work by ([Niklas Ekstrom](https://github.com/niklasekstrom/amiga-par-to-spi-adapter)) and ([Mike Sterling](https://github.com/mikestir/k1208-drivers)). Thanks to their excellent work I was able to build these drivers.
+The code is based upon previous work by [Niklas Ekstrom](https://github.com/niklasekstrom/amiga-par-to-spi-adapter) and [Mike Sterling](https://github.com/mikestir/k1208-drivers). Without their excellent work I would have never started this project.
 
 ## How to compile and where to find the binaries
-All code is compiled using VBCC hosted on an actual Amiga 3000.
-Included are Amiga scripts (iconX) to call the compiler and build the code.
+All code was compiled using VBCC hosted on an actual Amiga 3000.
+Included are Amiga scripts to call the compiler and build the code.
 For compiling the network driver sana2.h is also needed. As this file is copyrighted I did not include it.
 sana2.h should be placed in the sspi-net drawer
 In the Amiga drawer you will find the Amiga binaries: 2 drivers and 2 test programs.
 ### sspisd.device
-This is the SD-card driver, goes to devs: on your Amiga
+This is the SD-card device driver, goes to devs: on your Amiga
 ### sspinet.device
-This is the ENC28J60 network driver, also go to devs: on your Amiga
+This is the SANA-II ENC28J60 network device driver, also go to devs: on your Amiga
 ### sd_test
 A simple console program to test the SD-card. It will read and dump sector 0 on the console.
 ### nic_test
@@ -27,5 +27,18 @@ The network driver uses channel 2 of the simple SPI controller to communicate wi
 I use the FREE AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.net/package/comm/net/AmiTCP-bin-30b2).
 AmiTCP is not easy to setup but luckily Patrik Axelsson and David Eriksson made this excellent [installation guide](http://megaburken.net/~patrik/AmiTCP_Install/).
 Just make sure you replace any references to the SANA-II network device (they use "cnet.device") to "sspinet.device".
+
+# performance SD-card 
+(All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
+Booting into Classic-WB takes about 32 seconds
+Loading up Hippo-Player takes about 14 seconds
+Sysinfo reports a disk transfer speed of about 43 kbytes/sec
+
+# performance network driver
+(All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
+Downloading from Aminet using ncftp works with a transfer rate of about 11 kbytes/sec
+Inifinity Music Player 3 reports a network speed af about 20 kbytes/sec
+A 1472 bytes ping to my router takes about 120ms.
+
 
 
