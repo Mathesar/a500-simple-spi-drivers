@@ -20,6 +20,8 @@ It will reply every packet send and also dump it on the console.
 
 # SD-card
 The driver is currently very simple and does not support SCSI inquiry commands (so no HDtoolbox), no auto-mounting and no auto-booting.
-The way to deal with this is to prep the SD-card under Winuae and use a manual mount script. As the driver is based upon Niklas's driver you can refer to the tutorials written for the sdbox. Like for example ([here](https://www.kernelcrash.com/blog/cheap-hard-drive-for-the-amiga-500-with-sdbox/2020/09/26/)). Just replace any reference to the driver with "sspisd.device". I actually followed above tutorial to create a boot floppy to mount the SD-card and handover control to the Workbench: partition on the SD-card. This procvess only takes a couiple of seconds and after that the SD-card behaves like any other harddisk.
+The way to deal with this is to prep the SD-card under Winuae and use a manual mount script. As the driver is based upon Niklas's driver you can refer to the tutorials written for the sdbox. Like for example ([here](https://www.kernelcrash.com/blog/cheap-hard-drive-for-the-amiga-500-with-sdbox/2020/09/26/)). Just replace any reference to the driver with "sspisd.device". I actually followed above tutorial to create a boot floppy to mount the SD-card and handover control to the Workbench: partition on the SD-card. This process only takes a couiple of seconds and after that the SD-card behaves like any other harddisk.
+
+#network driver
 
 
