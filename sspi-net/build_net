@@ -1,0 +1,13 @@
+echo "building network driver test program"
+vc nic-test.c vb_interrupt.c vb_interrupt_server.asm enc28j60.c ../sspi-common/timer.c ../sspi-lib/spi.c ../sspi-lib/spi_low.asm -I../sspi-common -I../sspi-lib  -lamiga -O2 -o /amiga/nic_test
+
+echo "building sspinet.device"
+vc romtag.asm device.c vb_interrupt.c vb_interrupt_server.asm enc28j60.c ../sspi-common/timer.c ../sspi-lib/spi.c ../sspi-lib/spi_low.asm -I../sspi-common -I../sspi-lib  -lamiga -nostdlib -O2 -o /amiga/sspinet.device
+
+echo "copying test program to test floppy"
+copy /amiga/nic_test SPI_TEST:c
+
+echo "copying sspinet.device to test floppy"
+copy /amiga/sspinet.device SPI_TEST:devs
+
+ask "press return to close this window"

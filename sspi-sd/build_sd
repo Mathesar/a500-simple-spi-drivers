@@ -1,0 +1,13 @@
+echo "building SD card driver test program"
+vc  sd_test.c sd.c ../sspi-common/timer.c ../sspi-lib/spi.c ../sspi-lib/spi_low.asm -I../sspi-lib -I../sspi-common -lamiga -O2 -o /amiga/sd_test
+
+echo "building sspisd.device"
+vc romtag.asm device.c sd.c ../sspi-common/timer.c ../sspi-lib/spi.c ../sspi-lib/spi_low.asm -I../sspi-lib -I../sspi-common -nostdlib -lamiga -O2 -o /amiga/sspisd.device
+
+echo "copying test program to test floppy"
+copy /amiga/sd_test SPI_TEST:c
+
+echo "copying device to test floppy"
+copy /amiga/sspisd.device SPI_TEST:devs
+
+ask "press return to close this window"
