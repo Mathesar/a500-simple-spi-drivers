@@ -27,17 +27,17 @@ The network driver uses channel 2 of the simple SPI controller to communicate wi
 I use the old but free AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.net/package/comm/net/AmiTCP-bin-30b2). AmiTCP is not easy to setup but luckily Patrik Axelsson and David Eriksson made this excellent [installation guide](http://megaburken.net/~patrik/AmiTCP_Install/). Just make sure you replace any references to the SANA-II network device (they use "cnet.device") to "sspinet.device". Installing AmiTCP is probably best done under WinAUE like I did.
 
 # performance SD-card 
-(All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
-Booting into Classic-WB takes about 32 seconds
-Loading up HippoPlayer takes about 14 seconds
-Sysinfo reports a disk transfer speed of about 42 kbytes/sec
+(All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow).
+* Booting into Classic-WB takes about 32 seconds.
+* Loading up HippoPlayer takes about 14 seconds.
+* Sysinfo reports a disk transfer speed of about 42 kbytes/sec.
 Note that in general usage the relatively low performance of the simple SPI controller is not really noticed. Usually the CPU is the bottleneck. It is only when loading large chunks of data (like loading a large mod file in HippoPlayer) that you notice the speed difference.
 
 # performance network driver
 (All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
-Downloading from Aminet using ncftp works with a transfer rate of about 11 kbytes/sec
-Inifinity Music Player 3 reports a network speed af about 20 kbytes/sec
-A 1472 bytes ping to my router takes about 120ms.
+* Downloading from Aminet using ncftp works with a transfer rate up to 11 kbytes/sec
+* Inifinity Music Player 3 reports a network speed af about 20 kbytes/sec
+* A 1472 bytes ping to my router takes about 120ms.
 
 # issues
 Like mentioned before, the SD-card driver is very simple and missing a lot of features. It does seem very stable though and my system is working fine with it. I never had a crash caused by the driver.
