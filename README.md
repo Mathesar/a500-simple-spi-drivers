@@ -31,6 +31,7 @@ I use the old but free AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.ne
 * Booting into Classic-WB takes about 32 seconds.
 * Loading up HippoPlayer takes about 14 seconds.
 * Sysinfo reports a disk transfer speed of about 42 kbytes/sec.
+
 Note that in general usage the relatively low performance of the simple SPI controller is not really noticed. Usually the CPU is the bottleneck. It is only when loading large chunks of data (like loading a large mod file in HippoPlayer) that you notice the speed difference.
 
 # performance network driver
