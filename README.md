@@ -1,5 +1,6 @@
 # a500-simple-spi-drivers
 SD-card and Ethernet drivers for the Amiga 500 Simple SPI controller. 
+The code is based upon previous work by ([Niklas Ekstrom](https://github.com/niklasekstrom/amiga-par-to-spi-adapter)) and ([Mike Sterling](https://github.com/mikestir/k1208-drivers)). Thanks to their excellent work I was able to build these drivers.
 
 ## How to compile and where to find the binaries
 All code is compiled using VBCC hosted on an actual Amiga 3000.
