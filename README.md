@@ -38,5 +38,7 @@ Downloading from Aminet using ncftp works with a transfer rate of about 11 kbyte
 Inifinity Music Player 3 reports a network speed af about 20 kbytes/sec
 A 1472 bytes ping to my router takes about 120ms.
 
-
+# issues
+Like mentioned before, the SD-card driver is very simple and missing a lot of features. It does seem very stable though and my system is working fine with it. I never had a crash caused by the driver.
+The enc28j60 driver does have some issues it seems. It works stable enough to download files from Aminet using ncftp, visit some telnet BBS's with Ncomm and telser.device and you can listen to music using IMP3. However, it will crash when the system calls expunge() (and that only happens when you stop AmiTCP using "stopnet" and then do "avail flush" to free up memory). But no one ever does that right? Otherwise the driver is pretty stable.
 
