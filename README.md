@@ -20,13 +20,11 @@ It will reply every packet send and also dump it on the console.
 
 # SD-card
 The driver is currently very simple and does not support SCSI inquiry commands (so no HDtoolbox), no auto-mounting and no auto-booting.
-The way to deal with this is to prep the SD-card under Winuae and use a manual mount script. As the driver is based upon Niklas's driver you can refer to the tutorials written for the sdbox. Like for example ([here](https://www.kernelcrash.com/blog/cheap-hard-drive-for-the-amiga-500-with-sdbox/2020/09/26/)). Just replace any reference to the driver with "sspisd.device". I actually followed above tutorial to create a boot floppy to mount the SD-card and handover control to the Workbench: partition on the SD-card. This process only takes a couiple of seconds and after that the SD-card behaves like any other harddisk.
+The way to deal with this is to prep the SD-card under Winuae and use a manual mount script. As the driver is based upon Niklas's driver you can refer to the tutorials written for the sdbox. Like for example ([here](https://www.kernelcrash.com/blog/cheap-hard-drive-for-the-amiga-500-with-sdbox/2020/09/26/)). Just replace any reference to the driver with "sspisd.device". I actually use a boot floppy to mount the SD-card and handover control to the Workbench: partition on the SD-card. This process only takes a couple of seconds and after that the SD-card behaves like any other harddisk.
 
 # network driver
 The network driver uses channel 2 of the simple SPI controller to communicate with an ENC28J60 10Mbit ethernet controller chip. These chips are available as a cheap module and are thus easily hooked up to the simple SPI controller. The nework device driver is SANA-II compatible and can thus be used with any of the Amiga TCP/IP stacks.
-I use the FREE AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.net/package/comm/net/AmiTCP-bin-30b2).
-AmiTCP is not easy to setup but luckily Patrik Axelsson and David Eriksson made this excellent [installation guide](http://megaburken.net/~patrik/AmiTCP_Install/).
-Just make sure you replace any references to the SANA-II network device (they use "cnet.device") to "sspinet.device".
+I use the FREE AmiTCP 3.0b2 TCP/IP stack from [Aminet](https://aminet.net/package/comm/net/AmiTCP-bin-30b2). AmiTCP is not easy to setup but luckily Patrik Axelsson and David Eriksson made this excellent [installation guide](http://megaburken.net/~patrik/AmiTCP_Install/). Just make sure you replace any references to the SANA-II network device (they use "cnet.device") to "sspinet.device". Installing AmiTCP is probably best done under WinAUE like I did.
 
 # performance SD-card 
 (All tests done on an 68000 Amiga 500 with 1MB chip and 1.5MB slow)
