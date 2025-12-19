@@ -1,6 +1,6 @@
 # a500-simple-spi-drivers
 
-# NOTE: The SD-card driver has been superceded by [sd-lide.device](https://github.com/Mathesar/sd_lide.device).
+# NOTE: The SD-card driver has been superseded by [sd-lide.device](https://github.com/Mathesar/sd_lide.device/tree/a500-simple-spi).
 
 SD-card and Ethernet drivers for the Amiga 500 Simple SPI controller. 
 The code is based upon previous work by [Niklas Ekstrom](https://github.com/niklasekstrom/amiga-par-to-spi-adapter) and [Mike Sterling](https://github.com/mikestir/k1208-drivers). Without their excellent work I would have never started this project.
